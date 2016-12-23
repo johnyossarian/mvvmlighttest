@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="MvvmLightTest.RightMenuBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MvvmLightTest"
+             mc:Ignorable="d" 
+             d:DesignHeight="1024" d:DesignWidth="320">
+    <StackPanel>
+        <ContentControl Name="WebCamera" Height="240" Width="320" Visibility="{Binding local:CameraPresent}"/>
+        <Button Content="Product Search" Height="128" Margin="10,20,10,20"/>
+        <Button Content="Checkout" Height="128" Margin="10,20,10,20"/>
+        <Button Content="Manage Loyalty Card" Height="128" Margin="10,20,10,20"/>
+        <Button Content="Home" Height="128" Margin="10,20,10,20"/>
+    </StackPanel>
+</UserControl>
