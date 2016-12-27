@@ -3,6 +3,8 @@ using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
 using System.Windows.Controls;
 using System;
+using MvvmLightTest.View;
+
 
 namespace MvvmLightTest.ViewModel
 {
@@ -21,23 +23,7 @@ namespace MvvmLightTest.ViewModel
     public class MainViewModel : ViewModelBase
     {
         public ICommand SwitchViewCommand { get; private set; }
-
-        private bool isCameraPresent;
-        public bool IsCameraPresent {
-            get
-            {
-                return isCameraPresent;
-            }
-            set
-            {
-                if (value != isCameraPresent)
-                {
-                    isCameraPresent = value;
-                    RaisePropertyChanged("IsCameraPresent");
-                }
-            }
-        }
-
+        
         private UserControl currentView;
         public UserControl CurrentView
         {
@@ -62,7 +48,7 @@ namespace MvvmLightTest.ViewModel
         {
             this.SwitchViewCommand = new RelayCommand<object>(SwitchView);
             this.CurrentView = new MainMenuControl();
-            this.CurrentView.DataContext = this;
+            //this.CurrentView.DataContext = this;
 
         }
 

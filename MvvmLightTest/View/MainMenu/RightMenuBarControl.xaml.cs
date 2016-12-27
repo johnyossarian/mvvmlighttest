@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLightTest
+namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for MainWindowWelcomeControl.xaml
+    /// Interaction logic for RightMenuBarControl.xaml
     /// </summary>
-    public partial class MainWindowWelcomeControl : UserControl
+    public partial class RightMenuBarControl : UserControl
     {
-        public MainWindowWelcomeControl()
+        public RightMenuBarControl()
         {
             InitializeComponent();
+
+            if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            {
+                this.Background = Brushes.Azure;
+            }
         }
     }
 }

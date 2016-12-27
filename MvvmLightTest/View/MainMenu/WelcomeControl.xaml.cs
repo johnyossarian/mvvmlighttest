@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLightTest
+namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WelcomeControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WelcomeControl : UserControl
     {
-        public MainWindow()
+        public WelcomeControl()
         {
             InitializeComponent();
         }

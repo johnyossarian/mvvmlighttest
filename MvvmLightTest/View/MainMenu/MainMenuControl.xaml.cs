@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLightTest
+namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for RightMenuBarControl.xaml
+    /// Interaction logic for MainMenuControl.xaml
     /// </summary>
-    public partial class RightMenuBarControl : UserControl
+    public partial class MainMenuControl : UserControl
     {
-        public RightMenuBarControl()
+        public MainMenuControl()
         {
             InitializeComponent();
         }
