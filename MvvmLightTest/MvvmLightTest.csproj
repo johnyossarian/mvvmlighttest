@@ -87,6 +87,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
+    <Compile Include="ViewModel\OperatorMenuViewModel.cs" />
     <Compile Include="View\InstanceEqualsConverter.cs" />
     <Compile Include="View\MainMenu\MainMenuControl.xaml.cs">
       <DependentUpon>MainMenuControl.xaml</DependentUpon>
@@ -100,6 +101,9 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RightMenuBarViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\OperatorMenu\OperatorMenuControl.xaml.cs">
+      <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainMenu\MainMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainMenu\RightMenuBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OperatorMenu\OperatorMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

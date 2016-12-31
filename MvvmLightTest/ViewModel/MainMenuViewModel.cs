@@ -12,7 +12,7 @@ using MvvmLightTest.View;
 
 namespace MvvmLightTest.ViewModel
 {
-    class MainMenuViewModel : ViewModelBase
+    public class MainMenuViewModel : ViewModelBase
     {
         public ICommand SwitchContentCommand { get; private set; }
 

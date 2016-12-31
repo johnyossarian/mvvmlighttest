@@ -9,7 +9,7 @@
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentControl Content="{Binding CurrentView}"/>
     <Window.InputBindings>
-        <KeyBinding Key="F10" Command="{Binding SwitchViewCommand}" CommandParameter="{x:Type view:OperatorMenu}"/>
-        <KeyBinding Key="Esc" Command="{Binding SwitchViewCommand}" CommandParameter="{x:Type view:MainMenu}"/>
+        <KeyBinding Key="F10" Command="{Binding SwitchViewCommand}" CommandParameter="{x:Type local:OperatorMenuControl}"/>
+        <KeyBinding Key="Esc" Command="{Binding SwitchViewCommand}" CommandParameter="{x:Type local:MainMenuControl}"/>
     </Window.InputBindings>
 </Window>

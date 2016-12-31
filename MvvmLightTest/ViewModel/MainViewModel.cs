@@ -54,7 +54,7 @@ namespace MvvmLightTest.ViewModel
 
         public void SwitchView(object obj)
         {
-            this.currentView = (UserControl)Activator.CreateInstance((Type)obj);
+            CurrentView = (UserControl)Activator.CreateInstance((Type)obj);
         }
     }
 }

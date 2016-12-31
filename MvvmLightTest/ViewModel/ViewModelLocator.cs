@@ -43,6 +43,9 @@ namespace MvvmLightTest.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<MainMenuViewModel>();
+            SimpleIoc.Default.Register<OperatorMenuViewModel>();
+
         }
 
         public MainViewModel Main
@@ -52,7 +55,23 @@ namespace MvvmLightTest.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public MainMenuViewModel MainMenu
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MainMenuViewModel>();
+            }
+        }
+
+        public OperatorMenuViewModel OperatorMenu
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<OperatorMenuViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
