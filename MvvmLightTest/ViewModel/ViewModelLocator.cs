@@ -13,6 +13,7 @@
 */
 
 using GalaSoft.MvvmLight;
+using System;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
@@ -45,7 +46,8 @@ namespace MvvmLightTest.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<MainMenuViewModel>();
             SimpleIoc.Default.Register<OperatorMenuViewModel>();
-
+            SimpleIoc.Default.Register<RightMenuBarViewModel>();
+            SimpleIoc.Default.Register<ProductSearchViewModel>();
         }
 
         public MainViewModel Main
@@ -69,6 +71,27 @@ namespace MvvmLightTest.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<OperatorMenuViewModel>();
+            }
+        }
+
+        public RightMenuBarViewModel RightMenuBar
+        {
+            get
+            {
+                if(SimpleIoc.Default.IsRegistered<RightMenuBarViewModel>())
+                {
+                    SimpleIoc.Default.Unregister<RightMenuBarViewModel>();
+                    SimpleIoc.Default.Register<RightMenuBarViewModel>();
+                }
+                return ServiceLocator.Current.GetInstance<RightMenuBarViewModel>();
+            }
+        }
+
+        public ProductSearchViewModel ProductSearch
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ProductSearchViewModel>();
             }
         }
 

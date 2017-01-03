@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="MvvmLightTest.View.ProductSearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MvvmLightTest.View"
+             xmlns:Controls="clr-namespace:WpfKb.Controls;assembly=WpfKb" x:Name="winSearch"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+             mc:Ignorable="d" 
+             DataContext="{Binding ProductSearch, Source={StaticResource Locator}}"
+             d:DesignHeight="600" d:DesignWidth="600">
+    <UserControl.Background>
+        <SolidColorBrush Color="Azure"/>
+    </UserControl.Background>
+    <Grid FocusManager.FocusedElement="{Binding tbSearchText}">
+        <TextBox Name="tbSearchText" IsReadOnly="False" Height="72" Width="450" HorizontalAlignment="Left">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="KeyUp">
+                    <cmd:EventToCommand Command="{Binding TestCommand,
+                                          Mode=OneWay}"
+               CommandParameter="{Binding Text,
+                                  ElementName=MyTextBox,
+                                  Mode=OneWay}"
+               MustToggleIsEnabledValue="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <Controls:OnScreenKeyboard VerticalAlignment="Bottom" Height="200"/>
+    </Grid>
+</UserControl>

@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <local:WelcomeControl/>
+        <ContentControl Content="{Binding CurrentContent}"/>
         <DockPanel Grid.Column="2">
             <local:RightMenuBarControl/>
         </DockPanel>

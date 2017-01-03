@@ -12,11 +12,13 @@ using NLog;
 
 namespace MvvmLightTest.ViewModel
 {
-    class RightMenuBarViewModel : ViewModelBase
+    public class RightMenuBarViewModel : ViewModelBase
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public ICommand ProductSearchCommand { get; set; }
+        public ICommand SwitchContentCommand { get; set; }
+
+        public Webcam WebCamera { get; set; }
 
         private bool? isCameraPresent;
         public bool? IsCameraPresent
@@ -43,31 +45,27 @@ namespace MvvmLightTest.ViewModel
             }
         }
 
-        public Webcam WebCamera { get; set; }
-
         public RightMenuBarViewModel()
         {
-
             initWebCamera();
-            ProductSearchCommand = new RelayCommand<object>(SwitchContent);
-            //camKioskCamera.VideoDevice = cameraDevice.Name;
-            
+            SwitchContentCommand = new RelayCommand<object>(SwitchContent);
         }
 
         public void initWebCamera()
         {
             try
             {
-                WebCamera = new Webcam();
-                WebCamera.VideoDevice = EncoderDevices.FindDevices(EncoderDeviceType.Video).FirstOrDefault();
-                WebCamera.StartPreview();
+                this.WebCamera = new Webcam();
+                
+                this.WebCamera.VideoDevice = EncoderDevices.FindDevices(EncoderDeviceType.Video).FirstOrDefault();
+                
+                this.WebCamera.StartPreview();
                 IsCameraPresent = true;
             }
             catch (Exception e)
             {
                 logger.Error(e);
                 IsCameraPresent = false;
-
             }
         }
 
@@ -75,5 +73,6 @@ namespace MvvmLightTest.ViewModel
         {
             MessengerInstance.Send<NotificationMessage<Type>>(new NotificationMessage<Type>((Type)obj,"SwitchContent"));
         }
+        
     }
 }

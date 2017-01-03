@@ -47,6 +47,9 @@
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="InputSimulator">
+      <HintPath>..\Libraries\InputSimulator.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Encoder, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
       <HintPath>..\packages\Microsoft.Expression.Encoder.4.0.4276.3\lib\net45\Microsoft.Expression.Encoder.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +83,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfKb">
+      <HintPath>..\Libraries\WpfKb.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -88,9 +94,13 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\OperatorMenuViewModel.cs" />
+    <Compile Include="ViewModel\ProductSearchViewModel.cs" />
     <Compile Include="View\InstanceEqualsConverter.cs" />
     <Compile Include="View\MainMenu\MainMenuControl.xaml.cs">
       <DependentUpon>MainMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainMenu\ProductSearchControl.xaml.cs">
+      <DependentUpon>ProductSearchControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainMenu\WelcomeControl.xaml.cs">
       <DependentUpon>WelcomeControl.xaml</DependentUpon>
@@ -105,6 +115,10 @@
       <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainMenu\MainMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainMenu\ProductSearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

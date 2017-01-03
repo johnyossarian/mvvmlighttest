@@ -10,9 +10,9 @@
              d:DesignHeight="1024" d:DesignWidth="320">
     <StackPanel>
         <ContentControl Name="WebCamera" Content="{Binding WebCamera}" Height="240" Width="320" Visibility="{Binding CameraVisibility}"/>
-        <Button Content="Product Search" Height="128" Margin="10,20,10,20" Command="{Binding ProductSearchCommand}" CommandParameter="{x:Type local:WelcomeControl}"/>
-        <Button Content="Checkout" Height="128" Margin="10,20,10,20"/>
-        <Button Content="Manage Loyalty Card" Height="128" Margin="10,20,10,20"/>
-        <Button Content="Home" Height="128" Margin="10,20,10,20"/>
+        <Button Content="Product Search" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
+        <Button Content="Checkout" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
+        <Button Content="Manage Loyalty Card" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
+        <Button Content="Home" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:WelcomeControl}"/>
     </StackPanel>
 </UserControl>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
 using MvvmLightTest.View;
@@ -14,7 +15,6 @@ namespace MvvmLightTest.ViewModel
 {
     public class MainMenuViewModel : ViewModelBase
     {
-        public ICommand SwitchContentCommand { get; private set; }
 
         private UserControl currentContent;
         public UserControl CurrentContent
@@ -28,7 +28,7 @@ namespace MvvmLightTest.ViewModel
                 if (value != currentContent)
                 {
                     currentContent = value;
-                    RaisePropertyChanged("CurrentView");
+                    RaisePropertyChanged("CurrentContent");
                 }
             }
         }
@@ -36,7 +36,16 @@ namespace MvvmLightTest.ViewModel
 
         public MainMenuViewModel()
         {
+            MessengerInstance.Register<NotificationMessage<Type>>(this, SwitchViewContent);
             this.CurrentContent = new WelcomeControl();
+        }
+
+        public void SwitchViewContent(NotificationMessage<Type> msgType)
+        {
+            if (this.currentContent.GetType() != msgType.Content)
+            {
+                CurrentContent = (UserControl)Activator.CreateInstance(msgType.Content);
+            }
         }
     }
 }

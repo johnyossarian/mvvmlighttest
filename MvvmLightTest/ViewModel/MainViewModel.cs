@@ -5,21 +5,8 @@ using System.Windows.Controls;
 using System;
 using MvvmLightTest.View;
 
-
 namespace MvvmLightTest.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
         public ICommand SwitchViewCommand { get; private set; }
@@ -40,21 +27,19 @@ namespace MvvmLightTest.ViewModel
                 }
             }
         }
-
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        
         public MainViewModel()
         {
             this.SwitchViewCommand = new RelayCommand<object>(SwitchView);
             this.CurrentView = new MainMenuControl();
-            //this.CurrentView.DataContext = this;
-
         }
 
         public void SwitchView(object obj)
         {
-            CurrentView = (UserControl)Activator.CreateInstance((Type)obj);
+            if(this.currentView.GetType() != (Type)obj)
+            {
+                CurrentView = (UserControl)Activator.CreateInstance((Type)obj);
+            }
         }
     }
 }
