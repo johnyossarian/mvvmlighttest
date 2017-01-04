@@ -13,19 +13,20 @@
     <UserControl.Background>
         <SolidColorBrush Color="Azure"/>
     </UserControl.Background>
-    <Grid FocusManager.FocusedElement="{Binding tbSearchText}">
+    <Grid>
         <TextBox Name="tbSearchText" IsReadOnly="False" Height="72" Width="450" HorizontalAlignment="Left">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="KeyUp">
-                    <cmd:EventToCommand Command="{Binding TestCommand,
+                    <cmd:EventToCommand Command="{Binding ProductSearchCommand,
                                           Mode=OneWay}"
                CommandParameter="{Binding Text,
-                                  ElementName=MyTextBox,
+                                  ElementName=tbSearchText,
                                   Mode=OneWay}"
                MustToggleIsEnabledValue="True"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </TextBox>
-        <Controls:OnScreenKeyboard VerticalAlignment="Bottom" Height="200"/>
+        <Controls:OnScreenKeyboard Name="kbScreenKeyboard" VerticalAlignment="Bottom" Height="300"/>
+        <Button Content="Clear" VerticalAlignment="Top" Width="74" Margin="455,298,71,0" Command="{Binding ClearTextBox}" CommandParameter="{Binding ElementName=tbSearchText}"/>
     </Grid>
 </UserControl>

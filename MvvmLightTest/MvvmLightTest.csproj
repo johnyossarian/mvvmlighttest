@@ -92,12 +92,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\DebugMenuBarViewModel.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
+    <Compile Include="ViewModel\ManageLoyaltyCardViewModel.cs" />
     <Compile Include="ViewModel\OperatorMenuViewModel.cs" />
     <Compile Include="ViewModel\ProductSearchViewModel.cs" />
+    <Compile Include="View\MainMenu\DebugMenuBarControl.xaml.cs">
+      <DependentUpon>DebugMenuBarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\InstanceEqualsConverter.cs" />
     <Compile Include="View\MainMenu\MainMenuControl.xaml.cs">
       <DependentUpon>MainMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainMenu\ManageLoyaltyCardControl.xaml.cs">
+      <DependentUpon>ManageLoyaltyCardControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainMenu\ProductSearchControl.xaml.cs">
       <DependentUpon>ProductSearchControl.xaml</DependentUpon>
@@ -114,7 +122,15 @@
     <Compile Include="View\OperatorMenu\OperatorMenuControl.xaml.cs">
       <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\MainMenu\DebugMenuBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainMenu\MainMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainMenu\ManageLoyaltyCardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmLight.Database\MvvmLightTest.Database.csproj">
+      <Project>{45923d4c-a9d1-43f3-8be3-7f0376c002db}</Project>
+      <Name>MvvmLightTest.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

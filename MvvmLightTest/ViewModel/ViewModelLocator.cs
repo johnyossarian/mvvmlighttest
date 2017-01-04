@@ -48,6 +48,8 @@ namespace MvvmLightTest.ViewModel
             SimpleIoc.Default.Register<OperatorMenuViewModel>();
             SimpleIoc.Default.Register<RightMenuBarViewModel>();
             SimpleIoc.Default.Register<ProductSearchViewModel>();
+            SimpleIoc.Default.Register<ManageLoyaltyCardViewModel>();
+            SimpleIoc.Default.Register<DebugMenuBarViewModel>();
         }
 
         public MainViewModel Main
@@ -95,9 +97,25 @@ namespace MvvmLightTest.ViewModel
             }
         }
 
+        public ManageLoyaltyCardViewModel ManageLoyaltyCard
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ManageLoyaltyCardViewModel>();
+            }
+        }
+
+        public DebugMenuBarViewModel DebugMenuBar
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DebugMenuBarViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
-            // TODO Clear the ViewModels
+            
         }
     }
 }

@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MvvmLightTest.View"
-             mc:Ignorable="d" Height="600" Width="882.867">
+             Background="Azure"
+             mc:Ignorable="d" Height="600" Width="600">
     <Grid>
-        <TextBlock x:Name="tbWelcome" HorizontalAlignment="Right" Margin="0,46,159,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top" Height="170" Width="582" FontFamily="Yu Gothic UI" FontSize="96" Foreground="#FF00BAD3" TextAlignment="Center"/>
-        <TextBlock x:Name="tbMessage" HorizontalAlignment="Right" Margin="0,203,177,0" TextWrapping="Wrap" Text="Scan your item below to begin." VerticalAlignment="Top" FontFamily="Yu Gothic UI" Width="582" TextAlignment="Center" Foreground="Gray" Height="204" FontSize="64"/>
-        <TextBlock x:Name="tbMoreCardMessage" Visibility="Visible" HorizontalAlignment="Right" Margin="0,412,-7,0" TextWrapping="Wrap" Text="Have a new MORE™ card?" VerticalAlignment="Top" FontFamily="Yu Gothic UI" Width="890" TextAlignment="Center" Foreground="Gray" Height="69" FontSize="48"/>
-        <Button x:Name="btnSetupMoreCard" Visibility="Visible" HorizontalAlignment="Right" Margin="0,632,656,0" VerticalAlignment="Top" Width="262" Height="102" BorderBrush="{x:Null}" Style="{DynamicResource LargeButtonStyle}" ForceCursor="True" Background="#FF00BCD4" FontSize="48" Foreground="White" Content="Start Here" FontFamily="Yu Gothic UI" Command="{Binding SwitchViewCommand}"/>
-        <TextBlock x:Name="tbTimeUntilUpdate" Visibility="Hidden" HorizontalAlignment="Right" Margin="0,834,338,0" TextWrapping="Wrap" Text="Time to update: 123456 Seconds" VerticalAlignment="Top" FontFamily="Yu Gothic UI" Width="924" TextAlignment="Center" Foreground="Gray" Height="69" FontSize="48"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,198,160,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top" Height="28" Width="250" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,226,201,0" TextWrapping="Wrap" Text="Scan your item below to begin." VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Right" Margin="-128,252,-162,0" TextWrapping="Wrap" Text="Have a new MORE™ card?" VerticalAlignment="Top" Width="890" TextAlignment="Center" />
+        <Button Content="Start Here" HorizontalAlignment="Left" Margin="276,289,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </UserControl>

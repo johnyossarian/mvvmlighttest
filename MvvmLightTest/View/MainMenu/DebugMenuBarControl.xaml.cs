@@ -16,17 +16,13 @@ using System.Windows.Shapes;
 namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for WelcomeControl.xaml
+    /// Interaction logic for DebugMenuBarControl.xaml
     /// </summary>
-    public partial class WelcomeControl : UserControl
+    public partial class DebugMenuBarControl : UserControl
     {
-        public WelcomeControl()
+        public DebugMenuBarControl()
         {
             InitializeComponent();
-            if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            {
-                this.Background = Brushes.Transparent;
-            }
         }
     }
 }

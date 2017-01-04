@@ -23,6 +23,13 @@ namespace MvvmLightTest.View
         public ProductSearchControl()
         {
             InitializeComponent();
+            
+            this.kbScreenKeyboard.KeyboardReturn += KbScreenKeyboard_KeyboardReturn;
+        }
+
+        private void KbScreenKeyboard_KeyboardReturn(object sender, WpfKb.Controls.KeypadReturn e)
+        {
+            tbSearchText.Focus();
         }
     }
 }

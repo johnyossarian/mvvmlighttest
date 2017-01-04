@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for WelcomeControl.xaml
+    /// Interaction logic for ManageLoyaltyCardControl.xaml
     /// </summary>
-    public partial class WelcomeControl : UserControl
+    public partial class ManageLoyaltyCardControl : UserControl
     {
-        public WelcomeControl()
+        public ManageLoyaltyCardControl()
         {
             InitializeComponent();
+
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
                 this.Background = Brushes.Transparent;

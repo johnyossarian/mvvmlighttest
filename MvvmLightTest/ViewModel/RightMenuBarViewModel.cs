@@ -16,6 +16,8 @@ namespace MvvmLightTest.ViewModel
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        private Object cameraLock = new Object();
+
         public ICommand SwitchContentCommand { get; set; }
 
         public Webcam WebCamera { get; set; }
@@ -55,15 +57,26 @@ namespace MvvmLightTest.ViewModel
         {
             try
             {
-                this.WebCamera = new Webcam();
-                
-                this.WebCamera.VideoDevice = EncoderDevices.FindDevices(EncoderDeviceType.Video).FirstOrDefault();
-                
-                this.WebCamera.StartPreview();
-                IsCameraPresent = true;
+                EncoderDevice encoder = EncoderDevices.FindDevices(EncoderDeviceType.Video).FirstOrDefault();
+                if (encoder != null)
+                {
+                    this.WebCamera = new Webcam();
+                    this.WebCamera.VideoDevice = encoder;
+                    this.WebCamera.StartPreview();
+                    IsCameraPresent = true;
+                }
             }
             catch (Exception e)
             {
+                if(this.WebCamera != null)
+                {
+                    if(this.WebCamera.VideoDevice != null)
+                    {
+                        this.WebCamera.VideoDevice.Dispose();
+                    }
+                    this.WebCamera.Dispose();
+                    this.WebCamera = null;
+                }
                 logger.Error(e);
                 IsCameraPresent = false;
             }
@@ -73,6 +86,23 @@ namespace MvvmLightTest.ViewModel
         {
             MessengerInstance.Send<NotificationMessage<Type>>(new NotificationMessage<Type>((Type)obj,"SwitchContent"));
         }
-        
+
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this.WebCamera != null)
+                {
+                    this.WebCamera.Dispose();
+                    this.WebCamera = null;
+                }
+            }
+        }
     }
 }
