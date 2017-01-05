@@ -62,8 +62,13 @@
       <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="QRCoder, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.2.3\lib\net40\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +81,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.2.3\lib\net40\UnityEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebcamControl">
       <HintPath>..\Libraries\WebcamControl.dll</HintPath>
@@ -92,6 +101,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\LoyaltyCardDirectorViewModel.cs" />
+    <Compile Include="ViewModel\WelcomeViewModel.cs" />
+    <Compile Include="View\DialogueWindow.xaml.cs">
+      <DependentUpon>DialogueWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DialogueWindowMessage.cs" />
     <Compile Include="ViewModel\DebugMenuBarViewModel.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\ManageLoyaltyCardViewModel.cs" />
@@ -122,6 +137,13 @@
     <Compile Include="View\OperatorMenu\OperatorMenuControl.xaml.cs">
       <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Shared\LoyaltyCardDirectorControl.xaml.cs">
+      <DependentUpon>LoyaltyCardDirectorControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\DialogueWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainMenu\DebugMenuBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OperatorMenu\OperatorMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\LoyaltyCardDirectorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

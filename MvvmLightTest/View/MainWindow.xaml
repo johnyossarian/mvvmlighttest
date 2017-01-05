@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MvvmLightTest.View"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStyle="None" WindowState="Maximized" d:DesignWidth ="1280" d:DesignHeight ="1024"
+        Title="MainWindow" WindowStyle="None" WindowState="Maximized" d:DesignHeight="1024" d:DesignWidth="1280"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentControl Content="{Binding CurrentView}"/>
     <Window.InputBindings>

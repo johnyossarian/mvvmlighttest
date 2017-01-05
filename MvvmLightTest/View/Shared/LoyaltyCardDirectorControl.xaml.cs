@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace MvvmLightTest.View
 {
     /// <summary>
-    /// Interaction logic for MainMenuControl.xaml
+    /// Interaction logic for LoyaltyCardDirectorControl.xaml
     /// </summary>
-    public partial class MainMenuControl : UserControl
+    public partial class LoyaltyCardDirectorControl : UserControl
     {
-        public MainMenuControl()
+        public LoyaltyCardDirectorControl()
         {
             InitializeComponent();
-
-            if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            {
-                this.Background = Brushes.Transparent;
-            }
         }
     }
 }

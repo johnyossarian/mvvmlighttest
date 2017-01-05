@@ -50,6 +50,9 @@ namespace MvvmLightTest.ViewModel
             SimpleIoc.Default.Register<ProductSearchViewModel>();
             SimpleIoc.Default.Register<ManageLoyaltyCardViewModel>();
             SimpleIoc.Default.Register<DebugMenuBarViewModel>();
+            SimpleIoc.Default.Register<LoyaltyCardDirectorViewModel>();
+            SimpleIoc.Default.Register<WelcomeViewModel>();
+
         }
 
         public MainViewModel Main
@@ -112,6 +115,23 @@ namespace MvvmLightTest.ViewModel
                 return ServiceLocator.Current.GetInstance<DebugMenuBarViewModel>();
             }
         }
+
+        public LoyaltyCardDirectorViewModel LoyaltyCardDirector
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<LoyaltyCardDirectorViewModel>();
+            }
+        }
+
+        public WelcomeViewModel Welcome
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<WelcomeViewModel>();
+            }
+        }
+
 
         public static void Cleanup()
         {

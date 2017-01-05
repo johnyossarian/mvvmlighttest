@@ -5,12 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MvvmLightTest.View"
              Background="Azure"
-             mc:Ignorable="d" Height="600" Width="600">
+             mc:Ignorable="d" Height="600" Width="600"
+             DataContext="{Binding Welcome, Source={StaticResource Locator}}" >
     <Grid>
         <TextBlock HorizontalAlignment="Right" Margin="0,198,160,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top" Height="28" Width="250" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,226,201,0" TextWrapping="Wrap" Text="Scan your item below to begin." VerticalAlignment="Top" />
         <TextBlock HorizontalAlignment="Right" Margin="-128,252,-162,0" TextWrapping="Wrap" Text="Have a new MORE™ card?" VerticalAlignment="Top" Width="890" TextAlignment="Center" />
-        <Button Content="Start Here" HorizontalAlignment="Left" Margin="276,289,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Start Here" HorizontalAlignment="Left" Margin="276,289,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DialogueWindowCommand}" CommandParameter="{x:Type local:LoyaltyCardDirectorControl}"/>
 
     </Grid>
 </UserControl>

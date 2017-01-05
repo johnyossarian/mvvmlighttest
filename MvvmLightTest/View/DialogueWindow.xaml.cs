@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLightTest.View
+namespace MvvmLightTest
 {
     /// <summary>
-    /// Interaction logic for MainMenuControl.xaml
+    /// Interaction logic for DialogueWindow.xaml
     /// </summary>
-    public partial class MainMenuControl : UserControl
+    public partial class DialogueWindow : Window
     {
-        public MainMenuControl()
+        public DialogueWindow()
         {
             InitializeComponent();
-
-            if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            {
-                this.Background = Brushes.Transparent;
-            }
         }
     }
 }

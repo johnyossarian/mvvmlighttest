@@ -23,6 +23,10 @@ namespace MvvmLightTest.View
         public DebugMenuBarControl()
         {
             InitializeComponent();
+            if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            {
+                this.Background = Brushes.Transparent;
+            }
         }
     }
 }

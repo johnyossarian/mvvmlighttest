@@ -6,8 +6,9 @@
              xmlns:local="clr-namespace:MvvmLightTest.View"
              mc:Ignorable="d" 
              Background="Azure"
-             d:DesignHeight="300" d:DesignWidth="1024">
+             d:DesignHeight="100" d:DesignWidth="1024">
     <WrapPanel>
-        
+        <Button x:Name="button" Content="Button" Width="100" Height="100"/>
+
     </WrapPanel>
 </UserControl>
