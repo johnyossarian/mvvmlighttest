@@ -28,6 +28,7 @@ namespace MvvmLightTest.View
             {
                 this.Background = Brushes.Azure;
             }
+            
         }
     }
 }

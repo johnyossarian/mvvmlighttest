@@ -9,7 +9,7 @@
              DataContext="{Binding RightMenuBar, Source={StaticResource Locator}}"
              d:DesignHeight="1024" d:DesignWidth="320">
     <StackPanel>
-        <ContentControl Name="WebCamera" Content="{Binding WebCamera}" Height="240" Width="320" Visibility="{Binding CameraVisibility}"/>
+        <ContentControl Name="WebCamera" Content="{Binding WebCamera}" Height="240" Width="{Binding ActualWidth}" Visibility="{Binding CameraVisibility}"/>
         <Button Content="Product Search" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
         <Button Content="Checkout" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
         <Button Content="Manage Loyalty Card" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ManageLoyaltyCardControl}"/>

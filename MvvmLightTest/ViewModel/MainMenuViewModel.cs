@@ -32,8 +32,7 @@ namespace MvvmLightTest.ViewModel
                 }
             }
         }
-
-
+        
         public MainMenuViewModel()
         {
             MessengerInstance.Register<NotificationMessage<Type>>(this, SwitchViewContent);

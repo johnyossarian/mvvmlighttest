@@ -6,9 +6,14 @@
              xmlns:local="clr-namespace:MvvmLightTest.View"
              mc:Ignorable="d" 
              Background="Azure"
-             d:DesignHeight="100" d:DesignWidth="1024">
+             d:DesignHeight="100" d:DesignWidth="1024"
+             DataContext="{Binding DebugMenuBar, Source={StaticResource Locator}}">
     <WrapPanel>
-        <Button x:Name="button" Content="Button" Width="100" Height="100"/>
-
+        <Button Width="100" Height="100" Command="{Binding AddRandProductToCart}">
+            <TextBlock Text="Add Random Product To Cart" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button Content="Swipe More" Width="100" Height="100"/>
+        <Button Content="Swipe CC" Width="100" Height="100"/>
+        
     </WrapPanel>
 </UserControl>

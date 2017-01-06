@@ -5,13 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MvvmLightTest.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="600"
+             Height="400" Width="800"
              Background="Azure"
              DataContext="{Binding LoyaltyCardDirector, Source={StaticResource Locator}}">
-    
+
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="To add a card to your account, please visit" VerticalAlignment="Top" Margin="0,45,0,10"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="0,65,0,0" Text="{Binding Url}" TextWrapping="Wrap"  VerticalAlignment="Top"/>
-        <Image Source="{Binding UrlQrCode}" Height="100"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding UrlQrCode}" Height="200" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="To add a card to your account, please visit" VerticalAlignment="Top" Margin="163,52,174,0" Grid.Column="1"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="98,100,90,0" TextAlignment="Center" Text="{Binding Url}" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.Column="1" Width="262"/>
+        <Button Content="Create Your New Accont" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Margin="144,140" Grid.Column="1" Command="{Binding CreateNewLoyaltyCardAccountCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" Grid.Column="1" Margin="144,180,144,100" Command="{Binding DialogueWindowCommand}" CommandParameter="{x:Type local:LoyaltyCardDirectorControl}"/>
     </Grid>
 </UserControl>

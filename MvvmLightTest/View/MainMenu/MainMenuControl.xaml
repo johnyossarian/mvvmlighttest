@@ -22,9 +22,8 @@
         <DockPanel Grid.Column="2">
             <local:RightMenuBarControl/>
         </DockPanel>
-        <DockPanel Grid.Row="2" Grid.ColumnSpan="2" Visibility="Collapsed">
-            <ContentControl Content="{Binding DebugMenuBar}"/>
+        <DockPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <local:DebugMenuBarControl/>
         </DockPanel>
     </Grid>
-    
 </UserControl>

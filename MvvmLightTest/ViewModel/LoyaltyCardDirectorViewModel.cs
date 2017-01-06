@@ -1,12 +1,21 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Media.Imaging;
+using System;
 using System.IO;
+using System.Windows.Input;
 using QRCoder;
+using MvvmLightTest.Model;
 
 namespace MvvmLightTest.ViewModel
 {
     public class LoyaltyCardDirectorViewModel : ViewModelBase
     {
+        public ICommand CreateNewLoyaltyCardAccountCommand { get; private set; }
+
+        public ICommand DialogueWindowCommand { get; private set; }
+
         private string url;
         public string Url
         {
@@ -50,6 +59,7 @@ namespace MvvmLightTest.ViewModel
         public LoyaltyCardDirectorViewModel()
         {
             this.Url = "https://www.premiermarketcards.com";
+            DialogueWindowCommand = new RelayCommand<object>(DialogueWindow);
         }
 
         public BitmapImage GenerateQRCode(string text)
@@ -72,6 +82,11 @@ namespace MvvmLightTest.ViewModel
 
                 return bitmapimage;
             }
+        }
+
+        public void DialogueWindow(object obj)
+        {
+            MessengerInstance.Send<NotificationMessage<DialogueWindowMessage>>(new NotificationMessage<DialogueWindowMessage>(new DialogueWindowMessage { UserControlType = (Type)obj }, "SwitchDialogueWindow"));
         }
     }
 }
