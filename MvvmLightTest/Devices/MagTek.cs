@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSCRANET;
+﻿using MTSCRANET;
 
 
-namespace MvvmLightTest.Devices.MagStripeReader
+namespace MvvmLightTest.Devices
 {
     public class MagTek
     {
@@ -14,15 +9,17 @@ namespace MvvmLightTest.Devices.MagStripeReader
 
         public MagTek()
         {
-
+            InitializeMagStripeReader();
         }
 
         public void InitializeMagStripeReader()
         {
             reader = new MTSCRA();
             reader.setConnectionType(MTLIB.MTConnectionType.USB);
-            //reader.OnDataReceived += Reader_OnDataReceived;
+            reader.OnDataReceived += Reader_OnDataReceived;
             reader.openDevice();
         }
+
+        public void Reader_OnDataReceived(object sender, )
     }
 }

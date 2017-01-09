@@ -15,7 +15,7 @@ namespace MvvmLightTest.ViewModel
     public class RightMenuBarViewModel : ViewModelBase
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-
+       
         private Object cameraLock = new Object();
 
         public ICommand SwitchContentCommand { get; set; }

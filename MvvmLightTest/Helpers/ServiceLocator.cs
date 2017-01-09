@@ -12,23 +12,23 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using GalaSoft.MvvmLight;
-using System;
+using MvvmLightTest.ViewModel;
+using MvvmLightTest.Devices;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace MvvmLightTest.ViewModel
+namespace MvvmLightTest
 {
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
     /// </summary>
-    public class ViewModelLocator
+    public class Locator
     {
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public ViewModelLocator()
+        public Locator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -42,7 +42,7 @@ namespace MvvmLightTest.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
-
+            
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<MainMenuViewModel>();
             SimpleIoc.Default.Register<OperatorMenuViewModel>();
@@ -53,6 +53,7 @@ namespace MvvmLightTest.ViewModel
             SimpleIoc.Default.Register<LoyaltyCardDirectorViewModel>();
             SimpleIoc.Default.Register<WelcomeViewModel>();
 
+            SimpleIoc.Default.Register<>
         }
 
         public MainViewModel Main

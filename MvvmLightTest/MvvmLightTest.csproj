@@ -58,6 +58,12 @@
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MTLIB">
+      <HintPath>..\Libraries\MTLIB.dll</HintPath>
+    </Reference>
+    <Reference Include="MTSCRANET">
+      <HintPath>..\Libraries\MTSCRANET.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +107,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Devices\MagTek.cs" />
+    <Compile Include="Model\CardSwipeMessage.cs" />
     <Compile Include="ViewModel\LoyaltyCardDirectorViewModel.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
     <Compile Include="View\DialogueWindow.xaml.cs">
@@ -133,7 +141,7 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RightMenuBarViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Helpers\ServiceLocator.cs" />
     <Compile Include="View\OperatorMenu\OperatorMenuControl.xaml.cs">
       <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
     </Compile>
@@ -225,12 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MvvmLight.Database\MvvmLightTest.Database.csproj">
-      <Project>{45923d4c-a9d1-43f3-8be3-7f0376c002db}</Project>
-      <Name>MvvmLightTest.Database</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
