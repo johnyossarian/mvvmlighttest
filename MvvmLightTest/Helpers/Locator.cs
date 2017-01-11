@@ -53,6 +53,8 @@ namespace MvvmLightTest
             SimpleIoc.Default.Register<LoyaltyCardDirectorViewModel>();
             SimpleIoc.Default.Register<WelcomeViewModel>();
 
+            // this is a test
+
             
         }
 
