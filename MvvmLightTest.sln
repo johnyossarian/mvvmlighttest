@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLightTest", "MvvmLightTest\MvvmLightTest.csproj", "{4BDC94BC-DA80-4371-B2BE-869BBC029D22}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45923D4C-A9D1-43F3-8BE3-7F0376C002DB} = {45923D4C-A9D1-43F3-8BE3-7F0376C002DB}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67F9C108-4B02-489B-A1B3-CC6A13F723EE}"
 	ProjectSection(SolutionItems) = preProject

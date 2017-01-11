@@ -141,7 +141,7 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RightMenuBarViewModel.cs" />
-    <Compile Include="Helpers\ServiceLocator.cs" />
+    <Compile Include="Helpers\Locator.cs" />
     <Compile Include="View\OperatorMenu\OperatorMenuControl.xaml.cs">
       <DependentUpon>OperatorMenuControl.xaml</DependentUpon>
     </Compile>
@@ -233,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmLightTest.Database\MvvmLightTest.Database.csproj">
+      <Project>{45923d4c-a9d1-43f3-8be3-7f0376c002db}</Project>
+      <Name>MvvmLightTest.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

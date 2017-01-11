@@ -1,4 +1,6 @@
 ﻿using MTSCRANET;
+using MTLIB;
+using GalaSoft.MvvmLight.Messaging;
 
 
 namespace MvvmLightTest.Devices
@@ -20,6 +22,9 @@ namespace MvvmLightTest.Devices
             reader.openDevice();
         }
 
-        public void Reader_OnDataReceived(object sender, )
+        public void Reader_OnDataReceived(object sender, IMTCardData cardData)
+        {
+            // send message
+        }
     }
 }
