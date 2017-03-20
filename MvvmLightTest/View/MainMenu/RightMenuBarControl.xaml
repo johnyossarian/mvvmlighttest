@@ -7,7 +7,7 @@
              xmlns:vm ="clr-namespace:MvvmLightTest.ViewModel"
              mc:Ignorable="d"
              DataContext="{Binding RightMenuBar, Source={StaticResource Locator}}"
-             d:DesignHeight="1024" d:DesignWidth="320">
+             d:DesignHeight="1024" d:DesignWidth="320" Background="Azure">
     <StackPanel>
         <ContentControl Name="WebCamera" Content="{Binding WebCamera}" Height="240" Width="{Binding ActualWidth}" Visibility="{Binding CameraVisibility}"/>
         <Button Content="Product Search" Height="128" Margin="10,20,10,20" Command="{Binding SwitchContentCommand}" CommandParameter="{x:Type local:ProductSearchControl}"/>
